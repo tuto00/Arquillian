@@ -7,9 +7,8 @@ import javax.interceptor.InvocationContext;
 import org.arquillian.annotation.SampleInterceptor;
 
 @Interceptor
-//@Priority(Interceptor.Priority.APPLICATION)
 @SampleInterceptor
-public class TraceInterceptor {
+public class TestInterceptor {
 	@AroundInvoke
 	public Object obj(InvocationContext ic) throws Exception {
 

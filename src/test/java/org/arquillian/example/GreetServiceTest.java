@@ -14,7 +14,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class GreeterTest {
+public class GreetServiceTest {
 
 	@Inject
 	GreetService greeter;
@@ -22,11 +22,9 @@ public class GreeterTest {
 	@Deployment
 	public static JavaArchive createDeployment() {
 		JavaArchive jar = ShrinkWrap.create(JavaArchive.class)
-				// .addClasses(Greeter.class,Hello.class)
 				.addPackage("org.arquillian.example")
 				.addPackage("org.arquillian.annotation")
 				.addPackage("org.arquillian.interceptor")
-				//.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 				.addAsManifestResource(new File("src/main/webapp/WEB-INF/beans.xml"));
 		System.out.println(jar.toString(true));
 		return jar;
@@ -34,10 +32,6 @@ public class GreeterTest {
 
 	@Test
 	public void should_create_greeting() {
-		// Assert.assertEquals("Hello, Earthling!",
-		// greeter.createGreeting("Earthling"));
-		// greeter.greet(System.out, "Earthling");
 		assertEquals("helloWorld", greeter.greet());
 	}
-
 }
