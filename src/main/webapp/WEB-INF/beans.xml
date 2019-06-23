@@ -7,7 +7,7 @@
     bean-discovery-mode="all">
 
      <interceptors>
-        <class>org.arquillian.interceptor.TraceInterceptor</class>
+        <class>org.arquillian.interceptor.TestInterceptor</class>
     </interceptors>
 
 </beans>
